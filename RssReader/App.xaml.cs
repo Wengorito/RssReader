@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using RssReader.ViewModel;
+using System.Windows;
 
 namespace RssReader
 {
@@ -7,5 +8,11 @@ namespace RssReader
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            DependencyInjector.Register<IRssHelper, FakeRssHelper>();
+            MainWindow = DependencyInjector.Retrieve<MainWindow>();
+            MainWindow.Show();
+        }
     }
 }

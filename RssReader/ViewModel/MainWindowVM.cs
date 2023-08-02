@@ -5,11 +5,14 @@ namespace RssReader.ViewModel
 {
     public class MainWindowVM
     {
+        private IRssHelper _rssHelper;
+
         public ObservableCollection<Item> Items { get; set; }
 
-        public MainWindowVM()
+        public MainWindowVM(IRssHelper rssHelper)
         {
             Items = new ObservableCollection<Item>();
+            _rssHelper = rssHelper;
 
             ReadRss();
         }
@@ -19,7 +22,7 @@ namespace RssReader.ViewModel
         {
             Items.Clear();
 
-            var posts = RssHelper.GetPosts();
+            var posts = _rssHelper.GetPosts();
 
             foreach (var post in posts)
             {
