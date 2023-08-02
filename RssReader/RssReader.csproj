@@ -58,9 +58,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DependencyInjector.cs" />
-    <Compile Include="ViewModel\FakeRssHelper.cs" />
-    <Compile Include="ViewModel\IRssHelper.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\RssHelper.cs" />
     <Page Include="MainWindow.xaml">
